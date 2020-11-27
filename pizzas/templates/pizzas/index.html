@@ -1,0 +1,23 @@
+{% extends "pizzas/base.html" %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Pizzeria</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+</head>
+
+<body>
+    <img class="header" src="{% static '../static/images/header.jpeg' %}"">
+    <div class=" header-title">
+    <h1 class="store-title">Giovanni's Pizzeria</h1>
+    <h3>Buy any pizza you want.</h3>
+    </div>
+</body>
+
+</html>
+
+{% endblock content %}

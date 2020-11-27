@@ -1,0 +1,42 @@
+.navbar {
+    list-style-type: none;
+    top: 0;
+    margin: -10px;
+    margin-bottom: 30px;
+    /* padding: -10px; */
+    overflow: hidden;
+    position: relative;
+    background-color: #272727;
+    z-index: 100;
+}
+
+.navbar li {
+    float: right;
+    display: block;
+    list-style: none;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 40px;
+}
+
+.navbar li a {
+    /* display: block; */
+    text-align: center;
+    text-decoration: none;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+    color: white;
+    /* padding: 14px 16px; */
+}
+
+@media only screen and (max-width: 600px) {
+    .links-home {
+        float: left;
+        margin-left: 39px;
+    }
+
+}

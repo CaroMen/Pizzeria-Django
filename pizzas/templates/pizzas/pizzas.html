@@ -1,0 +1,36 @@
+{% extends "pizzas/base.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/pizzas.css' %}">
+    <title>Pizzas</title>
+</head>
+
+<body>
+    <h2 class="pizza-title">Our Available Pizzas</h2>
+
+    <ul class="available-pizzas">
+        {% for pizza in pizzas %}
+        <div class="available-pizza">
+            <li class="cards_item"><a class="link" href="{% url 'pizzas:pizza' pizza.id %}">
+                    {{ pizza }}
+                </a></li>
+            <img class="image" src="{{pizza.thumb.url}}">
+        </div>
+        {% empty %}
+        <p>No pizzas have been added yet.</p>
+        {% endfor %}
+
+    </ul>
+
+</body>
+
+</html>
+
+
+
+{% endblock content %}

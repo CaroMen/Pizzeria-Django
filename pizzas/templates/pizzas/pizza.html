@@ -1,0 +1,44 @@
+{% extends "pizzas/base.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/pizza.css' %}">
+</head>
+
+<body>
+
+    <div class="pizza-body">
+        <div class="image-container">
+            <h2 class="pizza-name">Pizza: {{ pizza.name }}</h2>
+            <img class="pizza-image" src="{{pizza.thumb.url}}">
+        </div>
+        <div class="info-container">
+            <h2>Available Toppings:</h2>
+            <ul>
+                {% for t in toppings %}
+
+                <li>{{ t.name|linebreaks }}</li>
+
+                {% empty %}
+
+                <li>There are no toppings on this pizza.</li>
+
+                {% endfor %}
+
+            </ul>
+            <div class="button">
+                <a href="{% url 'pizzas:new_comment' pizza.id %}">Add a comment</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+
+{% endblock content %}

@@ -1,0 +1,32 @@
+{% extends "pizzas/base.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/new_comment.css' %}">
+</head>
+
+<body>
+    <div class="form-container">
+        <h2 class="pizza-name">
+            <a href="{% url 'pizzas:pizza' pizza.id %}">{{ pizza }}</a>
+        </h2>
+
+        <p class="title">Add a new comment: </p>
+        <div class="form">
+            <form styleaction="{% url 'pizzas:new_comment' pizza.id %}" method='post'>
+                {% csrf_token %}
+                {{ form.as_p }}
+            </form>
+            <button class="form-button" name="submit">Add comment</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+{% endblock content %}

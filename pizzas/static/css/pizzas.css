@@ -1,0 +1,87 @@
+body {
+    color: #272727;
+    font-family: 'Quicksand', serif;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0;
+    /* padding: 1rem; */
+}
+
+.pizza-title {
+    text-align: center;
+    justify-content: center;
+    color: #222629;
+    font-weight: lighter;
+    font-size: 40px;
+}
+
+.available-pizzas {
+    /* display: grid; */
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+    display: grid;
+    /* flex-wrap: wrap; */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: 90%;
+    padding-left: 90px;
+}
+
+.available-pizza {
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.cards_item {
+    display: flex;
+    padding: 1rem;
+}
+
+.link {
+    text-transform: uppercase;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
+    font-size: 30px;
+    width: 100%;
+    color: #272727;
+}
+
+.image {
+    height: 400px;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+@media only screen and (max-width: 600px) {
+    .cards_item {
+      width: 50%;
+    }
+    .available-pizzas {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-left: -68px;
+    }
+
+    .available-pizza {
+        display: flex;
+        width: 100%;
+        margin: auto;
+        left: -300px;
+    }
+
+    .link {
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+}
