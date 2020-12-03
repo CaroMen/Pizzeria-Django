@@ -16,9 +16,10 @@
 
         <p class="title">Add a new comment: </p>
         <div class="form">
-            <form styleaction="{% url 'pizzas:new_comment' pizza.id %}" method='post'>
+            <form action="{% url 'pizzas:new_comment' pizza.id %}" method='post'>
                 {% csrf_token %}
                 {{ form.as_p }}
+                {{ form.name.errors }}
             </form>
             <button class="form-button" name="submit">Add comment</button>
         </div>

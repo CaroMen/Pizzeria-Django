@@ -12,7 +12,7 @@
 
     <div class="pizza-body">
         <div class="image-container">
-            <h2 class="pizza-name">Pizza: {{ pizza.name }}</h2>
+            <h2 class="pizza-name">{{ pizza.name }}</h2>
             <img class="pizza-image" src="{{pizza.thumb.url}}">
         </div>
         <div class="info-container">
@@ -25,6 +25,18 @@
                 {% empty %}
 
                 <li>There are no toppings on this pizza.</li>
+
+                {% endfor %}
+
+            </ul>
+            <ul>
+                {% for c in comments %}
+
+                <li>{{ c.name|linebreaks }}</li>
+
+                {% empty %}
+
+                <h2>There are no reviews for this pizza.</h2>
 
                 {% endfor %}
 

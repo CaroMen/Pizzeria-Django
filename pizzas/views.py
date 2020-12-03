@@ -36,7 +36,7 @@ def new_comment(request, pizza_id):
             new_comment.pizza = pizza
             new_comment.save()
             form.save()
-            return redirect('pizzas:pizza', p_id=pizza_id)
+            return redirect('pizzas:pizzas', pizza_id=pizza_id)
 
     context = {'form': form, 'pizza': pizza}
     return render(request, 'pizzas/new_comment.html', context)
